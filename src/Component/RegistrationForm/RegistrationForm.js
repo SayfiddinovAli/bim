@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './SignUp.css'; // Stil faylini qo'shish
 import { Container } from 'react-bootstrap';
+import { UserContext } from '../../context/Context';
 
-const RegistrationForm = () => {
-  const [formType, setFormType] = useState('student'); // 'teacher' yoki 'student'
+const SignUp = () => {
+  // Form ma'lumotlarini boshqarish uchun state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
-    experience: '', // O'qituvchilar uchun
-    subject: '',    // O'qituvchilar uchun
+    experience: '',
+    subject: ''
   });
+
+  // Form turi (student yoki teacher) uchun state
+  const [formType, setFormType] = useState('student');
+
+  // Contextdan setUser funksiyasini olish
+  const { setUser } = useContext(UserContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,9 +27,24 @@ const RegistrationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Formani yuborish uchun kerakli logika
-    console.log('Form ma\'lumotlari:', formData);
-    // Qo'shimcha ishlov berish
+    
+    // Foydalanuvchi ma'lumotlarini kontekstga uzatish
+    setUser({
+      name: formData.name,
+      email: formData.email,
+      experience: formData.experience,
+      scienceName: formData.subject
+    });
+    
+    // Formani tozalash (ixtiyoriy)
+    setFormData({
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      experience: '',
+      subject: ''
+    });
   };
 
   return (
@@ -130,4 +152,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default SignUp;

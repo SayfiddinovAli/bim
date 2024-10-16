@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css'; // Maxsus style yozish uchun
 import HeroSection from '../HeroSection/HeroSection';
 import Teacher1 from './teacher1.png'
 import Teacher from './Teacher2.png'
-
+import { UserContext } from '../../context/Context';
 const courses = [
   {
     title: "Ingliz tili",
@@ -58,14 +58,15 @@ const courses = [
 ];
 
 function CourseCard({ course }) {
+  const {user} = useContext(UserContext);
     return (
-      <div className="col-lg-4 col-md-6 col-12 mb-4 d-flex justify-content-between align-items-center teacherCard">
-        <div className="card h-100 text-center p-0">
+      <div className="col-lg-4 col-md-6 col-12 mb-4 d-flex justify-content-between align-items-center teacherCard mt-3">
+        <div className="card h-100 text-center p-0 shadow">
           <img src={course.img} alt={course.title} className="card-img-top mx-auto  teacherImg" />
           <div className="card-body">
-            <h5 className="card-title">{course.title}</h5>
-            <p className="card-text">{course.description}</p>
-            <p className="card-text"><strong>O'qituvchi:</strong> {course.instructor}</p>
+            <h5 className="card-title">{user.scienceName}</h5>
+            <p className="card-text">{user.email}</p>
+            <p className="card-text"><strong>O'qituvchi:</strong> {user.name}</p>
           </div>
           {/* Footer qismi */}
           <div className="card-footer d-flex justify-content-between align-items-center bg-white">

@@ -8,16 +8,16 @@ import CoursesSection from './Component/CorsesSection/CorsesSection';
 import TextAnimation from './Component/TextAnimation/TextAnimation';
 import Footer from './Component/Footer/Footer';
 import Card from './Component/card/Card';
-import NavigationBar from './Component/Kurslar/NavigationBar';
 import RegistrationForm from './Component/RegistrationForm/RegistrationForm';
 import SignIn from './Component/RegistrationForm/SignIn';
-
+import { UserProvider } from './context/Context';
 
 
 function App() {
   return (
     <Router>
-      <div className="App container">
+<UserProvider>
+<div className="App container">
         <Header />
         <Routes>
           {/* Home sahifasida barcha komponentlarni chiqarish */}
@@ -33,7 +33,7 @@ function App() {
             } 
           />
           {/* Kurslar sahifasi uchun alohida komponent */}
-          <Route path="/Kurslar" element={< NavigationBar/>} />
+          <Route path="/Kurslar" element={< Card/>} />
           <Route path="/Maqolalar" element={<TextAnimation />} />
           <Route path="/Contact" element={<Card/>} />
           <Route path="/SignIn" element={<SignIn/>} />
@@ -43,6 +43,9 @@ function App() {
         </Routes>
         <Footer />
       </div>
+
+</UserProvider>
+      
     </Router>
   );
 }

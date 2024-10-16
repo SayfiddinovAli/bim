@@ -1,0 +1,43 @@
+
+  .text-animation h1 {
+    transition: opacity 0.5s ease; /* Ko'rinish effektlari uchun */
+  }
+  
+  .text-animation h3{
+    color:black ;
+    font-weight: bold;
+    text-shadow: 1px ;
+  }
+  .text-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* O'rtaga joylashtirish */
+    justify-content: center; /* O'rtaga joylashtirish */
+    height: 150px; /* Balandi */
+    transition: opacity 0.5s ease; /* Ko'rinish effektlari */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
+  
+  
+  
+  /* Responsiv uslublar */
+  @media (max-width: 576px) { /* Mobil qurilmalar uchun */
+    .text-animation h3 {
+      font-size: 80%; /* Kichik ekranda matn hajmi */
+    }
+  }
+  
+  @media (min-width: 576px) and (max-width: 768px) { /* Tabletlar uchun */
+    .text-animation h3 {
+      font-size: 100%; /* O'rta ekranda matn hajmi */
+    }
+  }
+  
+  @media (min-width: 769px) { /* Laptoplar va katta ekranlar uchun */
+    .text-animation h3 {
+      font-size: 24px; /* Katta ekranda matn hajmi */
+    }
+  }
+  
+  

@@ -1,0 +1,42 @@
+section{
+  height: 80%;
+  align-items: center;
+  
+}
+
+.card {
+  backdrop-filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.btn-custom {
+  background-color: #007bff;
+  color: white;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#f8f9fa; /* fon rasmi qo'shishingiz mumkin */
+  background-size: cover;
+  
+}
+
+.hero-section {
+  position: relative; /* HeroSectionni pozitsiyalash */
+  z-index: 1; /* HeroSectionning ustunligi */
+}
+
+
+
+

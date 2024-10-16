@@ -1,0 +1,32 @@
+.teacherCard {
+  padding: 0; /* Kartalardagi ichki bo'shliqni olib tashlash */
+  
+}
+
+.card {
+ box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1); /* Karta uchun primary rangida soya */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effekti uchun o'tish */
+  max-width:90% ;
+  max-height: 100%; 
+}
+
+/* Kartalar orasida 2px ajratish */
+.row.cradasl > .col-12.col-sm-6.col-lg-4 {
+  margin-bottom: 2px; /* Har bir card o'rtasidagi vertikal bo'shliq */
+}
+
+/* Agar cardlar gorizontal joylashgan bo'lsa */
+.row.cradasl {
+  margin-left: -15px; /* Bootstrapning default col margin'ini hisobga olish */
+  margin-right: -15px; /* Bootstrapning default col margin'ini hisobga olish */
+}
+
+.row.cradasl > .col-12.col-sm-6.col-lg-4 {
+  padding-left: 15px; /* Bootstrapning default col padding'ini hisobga olish */
+  padding-right: 15px; /* Bootstrapning default col padding'ini hisobga olish */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Hoverda kartani biroz tepaga ko'tarish */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hoverda soyani kuchaytirish */
+}

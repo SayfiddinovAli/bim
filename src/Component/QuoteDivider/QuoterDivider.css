@@ -1,0 +1,23 @@
+.quote-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: #f1f1f1;
+    margin: 50px 0;
+    opacity: 0; /* Dastlabki ko'rinish */
+    transition: opacity 1s ease-in-out; /* Animatsiya o'zgarishi */
+  }
+  
+  .quote-divider.fade-in {
+    opacity: 1; /* Animatsiya o'zgarishi */
+  }
+  
+  .quote-text {
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #333;
+    padding: 10px 20px;
+    border-left: 5px solid #007bff;
+  }
+  

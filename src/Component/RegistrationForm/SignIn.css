@@ -1,0 +1,22 @@
+.signin-container {
+    height: 100vh;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    max-width: 400px; /* Kartaning kengligi */
+    width: 100%;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
